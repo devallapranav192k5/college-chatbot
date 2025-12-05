@@ -1,7 +1,8 @@
 import streamlit as st
 import requests
 
-API_URL = "http://127.0.0.1:8000/chat/"
+API_URL = "https://college-chatbot-production-f235.up.railway.app/chat/"
+
 
 st.set_page_config(
     page_title="College Chatbot",

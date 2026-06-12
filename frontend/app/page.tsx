@@ -132,7 +132,7 @@ const AttendanceSimulator = ({ data }: { data: any }) => {
     const syncDatabase = async () => {
         setIsSaving(true);
         try {
-            await fetch("http://localhost:8000/api/sync-data", {
+            await fetch("https://core-ai-engine.onrender.com/api/sync-data", {
                 method: "POST", headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ attendance_percentage: parseFloat(newPercentage) })
             });
@@ -208,7 +208,7 @@ export default function CollegeChatbot() {
     setMessages(conversationHistory);
 
     try {
-      const res = await fetch("http://localhost:8000/api/chat", {
+      const res = await fetch("https://core-ai-engine.onrender.com/api/chat", {
         method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ messages: conversationHistory }),
       });
 

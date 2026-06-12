@@ -13,6 +13,14 @@ Core AI is a scalable, database-driven B2B SaaS platform designed to act as a pe
 Moving beyond standard FAQ chatbots, this platform integrates a real-time, streaming Large Language Model (Gemini 2.5 Flash) with live PostgreSQL database metrics. The AI acts as a dynamic mentor—analyzing grades, forecasting CGPA, managing financial dues, and tracking internship pipelines, all rendered through an interactive, cinematic Next.js user interface.
 
 ## 📸 Interface Preview
+<img width="1838" height="847" alt="Screenshot 2026-06-06 115042" src="https://github.com/user-attachments/assets/52d425e0-0193-4992-89f2-64a037c140b4" />
+
+
+https://github.com/user-attachments/assets/347cb1e9-55dc-4dde-8f2c-f16dec3a4925
+
+
+
+
 
 
 ## 🚀 Core Architecture & Tech Stack

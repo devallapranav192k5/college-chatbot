@@ -1,9 +1,6 @@
 fastapi
-uvicorn[standard]
+uvicorn
 pydantic
-python-dotenv
-requests
-openai
+supabase
 google-generativeai
-scikit-learn
-streamlit
+python-dotenv

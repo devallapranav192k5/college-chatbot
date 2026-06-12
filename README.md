@@ -1,38 +1,65 @@
-# AI-Powered College Services Chatbot
+# Core AI // Intelligent Academic Operating System
 
-A full-stack AI-based college assistant chatbot designed to help students quickly access academic information such as attendance rules, exam details, timetables, and college events through natural-language queries.
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Online-success?style=for-the-badge&logo=vercel)](https://college-chatbot-five.vercel.app/)
+[![Next.js](https://img.shields.io/badge/Next.js-Black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
 
-The system is deployed on the cloud and accessible from any device via a live web interface.
+> **Live Application:** [https://college-chatbot-five.vercel.app/](https://college-chatbot-five.vercel.app/)
 
-Live Demo:
-https://college-chatbot-dlcmyyewfa2zjxz6p4raul.streamlit.app/
+## Overview
+Core AI is a scalable, database-driven B2B SaaS platform designed to act as a personal academic and professional operating system for university students. 
 
-Project Overview
+Moving beyond standard FAQ chatbots, this platform integrates a real-time, streaming Large Language Model (Gemini 2.5 Flash) with live PostgreSQL database metrics. The AI acts as a dynamic mentor—analyzing grades, forecasting CGPA, managing financial dues, and tracking internship pipelines, all rendered through an interactive, cinematic Next.js user interface.
 
-This project follows a clean frontend–backend architecture:
+## 📸 Interface Preview
+*(Drop a screenshot of your dark-mode dashboard here)*
+`![Dashboard UI](./docs/dashboard-preview.png)`
 
-A Streamlit-based chat interface allows users to ask questions in natural language.
+*(Drop a GIF or video link of the widgets animating here)*
+`![Interactive Widgets](./docs/widget-demo.gif)`
 
-A FastAPI backend processes requests using:
+## 🚀 Core Architecture & Tech Stack
+This application is built on a modern, decoupled microservices architecture.
 
-Intent classification
+### Frontend: Client UI (Deployed on Vercel)
+* **Framework:** Next.js / React 
+* **Styling:** Tailwind CSS (Custom dark-mode UI with frosted glass/backdrop-blur effects)
+* **Rendering Engine:** `react-markdown` with `remark-math` and `rehype-katex` for real-time formatting of LaTeX math formulas and AI-generated UI tags.
+* **Dynamic Interceptors:** Custom component dispatchers that read AI JSON payloads and render interactive widgets (Calculators, Career Funnels, Attendance Simulators) mid-conversation.
 
-FAQ-based reasoning
+### Backend: AI Engine (Deployed on Render)
+* **Framework:** Python / FastAPI
+* **LLM Engine:** Google Generative AI (`gemini-2.5-flash`) utilizing asynchronous streaming (`GenerativeModel.generate_content_async`).
+* **Database:** Supabase (PostgreSQL)
+* **Security:** Configured for multi-tenant Row Level Security (RLS) via JWT authentication to ensure strict data isolation between student profiles.
 
-Knowledge-base retrieval (RAG-style)
+## ⚡ Key Features (Phase 1)
+- **High-Speed AI Streaming:** Real-time token generation for zero-latency conversational UI.
+- **Context-Aware Mentorship:** The LLM is system-prompted with the user's live database metrics (CGPA, attendance, application statuses) to provide hyper-personalized advice.
+- **Interactive Widgets:** - 📊 **Attendance Simulator:** Safely calculate class misses against a 75% minimum requirement.
+  - 📈 **CGPA Forecaster:** Interactive sliders to project end-of-semester standing based on current credits.
+  - 💼 **Career Funnel:** Visual tracking of tech applications, interviews, and offers.
+  - 💸 **Financial Dashboard:** Real-time tracking of pending university dues.
 
-The system is designed to avoid hallucinations by prioritizing verified academic information, with optional LLM integration.
+## 🛠️ Local Installation
+To run this project locally, you will need Node.js, Python 3.10+, and a Supabase account.
 
-Key Features
+**1. Clone the repository**
+```bash
+git clone [https://github.com/devallapranav192k5/college-chatbot.git](https://github.com/devallapranav192k5/college-chatbot.git)
+cd college-chatbot
 
-Natural language chatbot for college-related queries
+2. Boot the AI Backend
+cd backend
+python -m venv venv
+source venv/bin/activate  # Or `venv\Scripts\activate` on Windows
+pip install -r requirements.txt
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
-Intent detection (attendance, exams, timetable, events, general info)
+3. Boot the Frontend UI
+cd frontend
+npm install
+npm run dev
 
-Knowledge-base & FAQ retrieval using TF-IDF similarity
-
-Modular architecture with optional OpenAI / Gemini LLM support
-
-Fully deployed and publicly accessible
-
-Auto-generated API documentation (Swagger)
+Engineered by Devalla Pranav.
